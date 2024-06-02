@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  api_server:
+    image: 005310045109.dkr.ecr.ap-northeast-2.amazonaws.com/tokamak-coingecko-api:latest
+    entrypoint: ["npm", "run", "start"]
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - 4000:4000
